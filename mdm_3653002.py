@@ -40,7 +40,6 @@ f = open("/tmp/3653002.xml", "w")
 for data in gzip.GzipFile(fileobj=compressed_data):
     f.write(str(data,'utf-8'))  
 f.close()
-print(gzip.GzipFile(fileobj=compressed_data))
 
 directory = r'/tmp'
 for filename in os.listdir(directory):
