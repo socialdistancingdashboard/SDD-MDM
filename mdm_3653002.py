@@ -23,7 +23,7 @@ context.load_cert_chain(certfile=certificate_file, password=certificate_secret)
 connection = http.client.HTTPSConnection(host, port=443, context=context)
  
 # Use connection to submit a HTTP POST request
-connection.request(method="POST", url=request_url, headers=request_headers))
+connection.request(method="POST", url=request_url, headers=request_headers)
  
 # Print the HTTP response from the IOT service endpoint
 response = connection.getresponse()
