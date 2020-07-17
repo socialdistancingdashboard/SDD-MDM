@@ -22,7 +22,9 @@ phases:
     commands:
       - echo BEGIN BUILD PHASE
       - python mdm_3653002.py
-      - 
+      - python mdm_3653003.py
+      - python mdm_3653004.py
+      - python mdm_3653005.py
     finally:
       - echo END BUILD PHASE
 
