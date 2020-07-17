@@ -2,7 +2,7 @@ import http.client
 import json
 import ssl
 import os
-
+import xml.etree.ElementTree as ET
 
 api_key = os.environ["mdm_key"]
  
@@ -31,4 +31,5 @@ connection.request(method="GET", url=request_url, headers=request_headers)
 response = connection.getresponse()
 print(response.status, response.reason)
 data = response.read()
-print(data)
+root = ET.fromstring(data)
+print(root)
