@@ -4,7 +4,7 @@ import ssl
 import os
 import xml.etree.ElementTree as ET
 import gzip
-import StringIO
+import io
 
 api_key = os.environ["mdm_key"]
  
@@ -34,6 +34,6 @@ response = connection.getresponse()
 print(response.status, response.reason)
 data = response.read()
 print(data)
-compressed_data = StringIO.StringIO(data)
+compressed_data = io.StringIO(data)
 for data in gzip.GzipFile(fileobj=compressed_data):
     print(data)
