@@ -33,7 +33,7 @@ connection.request(method="GET", url=request_url, headers=request_headers)
 response = connection.getresponse()
 print(response.status, response.reason)
 data = response.read()
-print(data)
 compressed_data = io.BytesIO(data)
-for data in gzip.GzipFile(fileobj=compressed_data):
-    print(data)
+#for data in gzip.GzipFile(fileobj=compressed_data):
+#    print(data)
+print(gzip.GzipFile(fileobj=compressed_data))
