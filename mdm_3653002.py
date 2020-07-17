@@ -34,6 +34,6 @@ response = connection.getresponse()
 print(response.status, response.reason)
 data = response.read()
 print(data)
-compressed_data = io.StringIO(data)
+compressed_data = io.BytesIO(data)
 for data in gzip.GzipFile(fileobj=compressed_data):
     print(data)
