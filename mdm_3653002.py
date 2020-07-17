@@ -1,6 +1,8 @@
 import http.client
 import json
 import ssl
+import os
+
 
 api_key = os.environ["mdm_key"]
  
