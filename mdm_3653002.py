@@ -5,6 +5,7 @@ import os
 import xml.etree.ElementTree as ET
 import gzip
 import io
+import boto3
 
 api_key = os.environ["mdm_key"]
  
