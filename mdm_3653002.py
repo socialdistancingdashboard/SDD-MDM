@@ -36,4 +36,4 @@ data = response.read()
 print(data)
 compressed_data = StringIO.StringIO(data)
 for data in gzip.GzipFile(fileobj=compressed_data):
-    print data
+    print(data)
