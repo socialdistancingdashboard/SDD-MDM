@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 import gzip
 import io
 import boto3
-import datetime
+from datetime import datetime
 
 api_key = os.environ["mdm_key"]
  
