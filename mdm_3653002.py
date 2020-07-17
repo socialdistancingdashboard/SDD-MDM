@@ -35,12 +35,11 @@ response = connection.getresponse()
 print(response.status, response.reason)
 data = response.read()
 compressed_data = io.BytesIO(data)
-#for data in gzip.GzipFile(fileobj=compressed_data):
-#    print(data)
-print(gzip.GzipFile(fileobj=compressed_data))
 f = open("/tmp/3653002.xml", "w")
-f.write(gzip.GzipFile(fileobj=compressed_data))
+for data in gzip.GzipFile(fileobj=compressed_data):
+    f.write(data)
 f.close()
+print(gzip.GzipFile(fileobj=compressed_data))
 
 directory = r'/tmp'
 for filename in os.listdir(directory):
