@@ -14,7 +14,7 @@ host = 'broker.mdm-portal.de'
 # Defining parts of the HTTP request
 request_url='/BASt-MDM-Interface/srv/3653002/clientPullService?subscriptionID=3653002'
 request_headers = {
-    'Content-Type': 'application/json'
+    'Content-Type': 'text/xml'
 }
  
 # Define the client certificate settings for https connection
