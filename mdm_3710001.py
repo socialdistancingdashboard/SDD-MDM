@@ -35,6 +35,6 @@ print(response.status, response.reason)
 data = response.read()
 compressed_data = io.BytesIO(data)
 f = open("/tmp/3710001.xml", "w")
-for data in gzip.GzipFile(fileobj=compressed_data):
+for data in compressed_data:
     f.write(str(data,'utf-8'))  
 f.close()
