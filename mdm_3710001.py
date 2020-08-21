@@ -14,7 +14,7 @@ certificate_secret = api_key
 host = 'broker.mdm-portal.de'
  
 # Defining parts of the HTTP request
-request_url='BASt-MDM-Interface/srv/3710001/clientPullService?subscriptionID=3710001'
+request_url='/BASt-MDM-Interface/srv/3710001/clientPullService?subscriptionID=3710001'
 request_headers = {
     'Content-Type': 'text/xml'
 }
@@ -35,6 +35,6 @@ print(response.status, response.reason)
 data = response.read()
 compressed_data = io.BytesIO(data)
 f = open("/tmp/3710001.xml", "w")
-for data in compressed_data:
+for data in gzip.GzipFile(fileobj=compressed_data):
     f.write(str(data,'utf-8'))  
 f.close()
